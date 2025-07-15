@@ -5,7 +5,7 @@ let users = [
   {
     id: 1,
     email: 'admin@teste.com',
-    password: 'teste123', // password
+    password: bcrypt.hashSync('123456', 10), // senha fácil para testes
     blocked: false,
     loginAttempts: 0,
     lastLoginAttempt: null
@@ -13,7 +13,7 @@ let users = [
   {
     id: 2,
     email: 'usuario@teste.com',
-    password: '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+    password: bcrypt.hashSync('123456', 10), // senha fácil para testes
     blocked: false,
     loginAttempts: 0,
     lastLoginAttempt: null
@@ -21,7 +21,7 @@ let users = [
   {
     id: 3,
     email: 'teste@teste.com',
-    password: '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+    password: bcrypt.hashSync('123456', 10), // senha fácil para testes
     blocked: false,
     loginAttempts: 0,
     lastLoginAttempt: null

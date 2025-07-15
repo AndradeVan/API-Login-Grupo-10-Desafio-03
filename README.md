@@ -64,9 +64,9 @@ A API vem com 3 usuários pré-cadastrados para testes:
 
 | Email | Senha |
 |-------|-------|
-| admin@teste.com | password |
-| usuario@teste.com | password |
-| teste@teste.com | password |
+| admin@teste.com | 123456 |
+| usuario@teste.com | 123456 |
+| teste@teste.com | 123456 |
 
 ## 🚀 Endpoints
 
@@ -77,7 +77,7 @@ Realizar login do usuário.
 ```json
 {
   "email": "admin@teste.com",
-  "password": "password"
+  "password": "123456"
 }
 ```
 
@@ -143,7 +143,7 @@ Esta API foi desenvolvida especificamente para estudos de testes de software. Vo
 ```bash
 curl -X POST http://localhost:3000/api/auth/login \
   -H "Content-Type: application/json" \
-  -d '{"email": "admin@teste.com", "password": "password"}'
+  -d '{"email": "admin@teste.com", "password": "123456"}'
 ```
 
 ### Teste de Login com Credenciais Inválidas
