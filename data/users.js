@@ -29,7 +29,7 @@ let users = [
 ];
 
 // Funções para gerenciar usuários
-const userService = {
+const loginUsuario = {
   // Buscar usuário por email
   findByEmail: (email) => {
     return users.find(user => user.email === email);
@@ -102,5 +102,5 @@ const userService = {
   }
 };
 
-module.exports = userService; 
+module.exports = loginUsuario; 
 
