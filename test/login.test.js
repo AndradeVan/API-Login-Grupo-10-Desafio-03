@@ -9,10 +9,10 @@ describe('POST /login', () => {
     .post('api/auth/login')
     .set('Content-Type', 'application/json')
     .send({
-      email: "admin@teste.com",
+      email: "usuario@teste.com",
       password: "123456"
     })
-
+    console.log(response.body)
     expect(response.status).to.equal(200)
     expect(response.body.token).to.be.a('string')
     
