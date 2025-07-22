@@ -1,5 +1,6 @@
 const request = require('supertest')
 const { expect } = require('chai')
+const loginUsuario = require('../data/users.js')
 
 describe('POST /login', () => { 
 
@@ -57,5 +58,19 @@ describe('POST /login', () => {
     expect(response.status).to.equal(400)
     expect(response.body.message).to.equal('Email e senha são obrigatórios')
 
+  })
+  it('deve encontrar usuário por email', () => {
+    const user = loginUsuario.findByEmail('admin@teste.com');
+    expect(user).to.exist;
+    expect(user.email).to.equal('admin@teste.com');
+  })
+
+  it('deve bloquear usuário após 3 tentativas de login', () => {
+    const email = 'teste@teste.com';
+    loginUsuario.updateLoginAttempts(email, false);
+    loginUsuario.updateLoginAttempts(email, false);
+    const user = loginUsuario.updateLoginAttempts(email, false);
+    expect(user.blocked).to.be.true;
+    expect(user.loginAttempts).to.equal(3);
   })
 })
