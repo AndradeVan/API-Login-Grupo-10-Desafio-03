@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 04 - Home</title>
+    
+    <!-- MaterializeCSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- CSS Customizado -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="home-page">
+    <!-- Navbar -->
+    <nav class="blue darken-2">
+        <div class="nav-wrapper container">
+            <a href="#" class="brand-logo">
+                <i class="material-icons left">school</i>
+                Desafio 04
+            </a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="#" class="waves-effect waves-light btn-small red" id="logoutBtn">
+                    <i class="material-icons left">logout</i>
+                    Logout
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <div class="container">
+        <!-- Header -->
+        <div class="row">
+            <div class="col s12">
+                <div class="card-panel blue lighten-5">
+                    <div class="center-align">
+                        <h2 class="blue-text text-darken-2">
+                            <i class="material-icons large">waving_hand</i>
+                            Bem vindo ao Desafio 04
+                        </h2>
+                        <p class="flow-text grey-text text-darken-1">
+                            Aplicação Web que consome a API do Desafio 03
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Descrição do Desafio -->
+        <div class="row">
+            <div class="col s12">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">
+                            <i class="material-icons left blue-text">description</i>
+                            Sobre o Desafio
+                        </span>
+                        <div class="divider" style="margin: 20px 0;"></div>
+                        <p class="flow-text">
+                            Você continuará no mesmo grupo do desafio 3 e juntos terão que construir uma 
+                            <strong>Aplicação Web</strong> que consome a API que o grupo construiu no desafio 3. 
+                            Além disso, terão que construir (sem uso de IA Generativa) os seus testes com 
+                            <strong>Cypress</strong> para avaliar os 4 cenários propostos no desafio 3.
+                        </p>
+                        <p class="flow-text">
+                            Seu projeto deve considerar a criação de um site, usando as tecnologias:
+                        </p>
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <ul class="collection">
+                                    <li class="collection-item">
+                                        <i class="material-icons left green-text">code</i>
+                                        HTML
+                                    </li>
+                                    <li class="collection-item">
+                                        <i class="material-icons left blue-text">style</i>
+                                        CSS
+                                    </li>
+                                    <li class="collection-item">
+                                        <i class="material-icons left yellow-text">javascript</i>
+                                        JavaScript
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col s12 m6">
+                                <ul class="collection">
+                                    <li class="collection-item">
+                                        <i class="material-icons left orange-text">dns</i>
+                                        Express.js
+                                    </li>
+                                    <li class="collection-item">
+                                        <i class="material-icons left purple-text">palette</i>
+                                        MaterializeCSS
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Equipe -->
+        <div class="row">
+            <div class="col s12">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">
+                            <i class="material-icons left green-text">group</i>
+                            Equipe 10
+                        </span>
+                        <div class="divider" style="margin: 20px 0;"></div>
+                        
+                        <div class="row">
+                            <!-- Integrante 1 -->
+                            <div class="col s12 m6 l4">
+                                <div class="card-panel grey lighten-4 center-align">
+                                    <img src="https://via.placeholder.com/150x150/2196F3/ffffff?text=Integrante+1" 
+                                         alt="Foto do Integrante 1" 
+                                         class="circle responsive-img" 
+                                         style="width: 120px; height: 120px;">
+                                    <h6 class="blue-text text-darken-2">Nome do Integrante 1</h6>
+                                    <p class="grey-text text-darken-1">email1@exemplo.com</p>
+                                    <div class="row">
+                                        <div class="col s6">
+                                            <a href="#" class="btn-small blue waves-effect waves-light">
+                                                <i class="material-icons left">link</i>
+                                                LinkedIn
+                                            </a>
+                                        </div>
+                                        <div class="col s6">
+                                            <a href="#" class="btn-small grey darken-3 waves-effect waves-light">
+                                                <i class="material-icons left">code</i>
+                                                GitHub
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Integrante 2 -->
+                            <div class="col s12 m6 l4">
+                                <div class="card-panel grey lighten-4 center-align">
+                                    <img src="https://via.placeholder.com/150x150/4CAF50/ffffff?text=Integrante+2" 
+                                         alt="Foto do Integrante 2" 
+                                         class="circle responsive-img" 
+                                         style="width: 120px; height: 120px;">
+                                    <h6 class="green-text text-darken-2">Nome do Integrante 2</h6>
+                                    <p class="grey-text text-darken-1">email2@exemplo.com</p>
+                                    <div class="row">
+                                        <div class="col s6">
+                                            <a href="#" class="btn-small blue waves-effect waves-light">
+                                                <i class="material-icons left">link</i>
+                                                LinkedIn
+                                            </a>
+                                        </div>
+                                        <div class="col s6">
+                                            <a href="#" class="btn-small grey darken-3 waves-effect waves-light">
+                                                <i class="material-icons left">code</i>
+                                                GitHub
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Integrante 3 -->
+                            <div class="col s12 m6 l4">
+                                <div class="card-panel grey lighten-4 center-align">
+                                    <img src="https://via.placeholder.com/150x150/FF9800/ffffff?text=Integrante+3" 
+                                         alt="Foto do Integrante 3" 
+                                         class="circle responsive-img" 
+                                         style="width: 120px; height: 120px;">
+                                    <h6 class="orange-text text-darken-2">Nome do Integrante 3</h6>
+                                    <p class="grey-text text-darken-1">email3@exemplo.com</p>
+                                    <div class="row">
+                                        <div class="col s6">
+                                            <a href="#" class="btn-small blue waves-effect waves-light">
+                                                <i class="material-icons left">link</i>
+                                                LinkedIn
+                                            </a>
+                                        </div>
+                                        <div class="col s6">
+                                            <a href="#" class="btn-small grey darken-3 waves-effect waves-light">
+                                                <i class="material-icons left">code</i>
+                                                GitHub
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Integrante 4 -->
+                            <div class="col s12 m6 l4">
+                                <div class="card-panel grey lighten-4 center-align">
+                                    <img src="https://via.placeholder.com/150x150/9C27B0/ffffff?text=Integrante+4" 
+                                         alt="Foto do Integrante 4" 
+                                         class="circle responsive-img" 
+                                         style="width: 120px; height: 120px;">
+                                    <h6 class="purple-text text-darken-2">Nome do Integrante 4</h6>
+                                    <p class="grey-text text-darken-1">email4@exemplo.com</p>
+                                    <div class="row">
+                                        <div class="col s6">
+                                            <a href="#" class="btn-small blue waves-effect waves-light">
+                                                <i class="material-icons left">link</i>
+                                                LinkedIn
+                                            </a>
+                                        </div>
+                                        <div class="col s6">
+                                            <a href="#" class="btn-small grey darken-3 waves-effect waves-light">
+                                                <i class="material-icons left">code</i>
+                                                GitHub
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Integrante 5 -->
+                            <div class="col s12 m6 l4">
+                                <div class="card-panel grey lighten-4 center-align">
+                                    <img src="https://via.placeholder.com/150x150/F44336/ffffff?text=Integrante+5" 
+                                         alt="Foto do Integrante 5" 
+                                         class="circle responsive-img" 
+                                         style="width: 120px; height: 120px;">
+                                    <h6 class="red-text text-darken-2">Nome do Integrante 5</h6>
+                                    <p class="grey-text text-darken-1">email5@exemplo.com</p>
+                                    <div class="row">
+                                        <div class="col s6">
+                                            <a href="#" class="btn-small blue waves-effect waves-light">
+                                                <i class="material-icons left">link</i>
+                                                LinkedIn
+                                            </a>
+                                        </div>
+                                        <div class="col s6">
+                                            <a href="#" class="btn-small grey darken-3 waves-effect waves-light">
+                                                <i class="material-icons left">code</i>
+                                                GitHub
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- MaterializeCSS JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    <!-- JavaScript Customizado -->
+    <script src="home.js"></script>
+</body>
+</html> 
