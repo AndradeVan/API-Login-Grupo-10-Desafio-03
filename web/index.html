@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Autenticação</title>
+    
+    <!-- MaterializeCSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- CSS Customizado -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m8 offset-m2 l6 offset-l3">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title center-align">
+                            <i class="material-icons large blue-text">security</i>
+                            <h4>Sistema de Autenticação</h4>
+                        </span>
+                        
+                        <!-- Formulário de Login -->
+                        <form id="loginForm">
+                            <div class="input-field">
+                                <i class="material-icons prefix">email</i>
+                                <input id="email" type="email" class="validate" required>
+                                <label for="email">Email</label>
+                            </div>
+                            
+                            <div class="input-field">
+                                <i class="material-icons prefix">lock</i>
+                                <input id="password" type="password" class="validate" required>
+                                <label for="password">Senha</label>
+                            </div>
+                            
+                            <div class="center-align">
+                                <button class="btn waves-effect waves-light blue" type="submit">
+                                    <i class="material-icons left">login</i>
+                                    Entrar
+                                </button>
+                            </div>
+                        </form>
+                        
+                        <div class="divider" style="margin: 20px 0;"></div>
+                        
+                        <!-- Link para Esqueceu sua senha -->
+                        <div class="center-align">
+                            <a href="forgot-password.html" class="waves-effect waves-light btn-flat blue-text">
+                                <i class="material-icons left">help</i>
+                                Esqueceu sua senha?
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- MaterializeCSS JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    <!-- JavaScript Customizado -->
+    <script src="script.js"></script>
+</body>
+</html> 
