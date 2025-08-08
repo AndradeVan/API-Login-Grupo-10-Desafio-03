@@ -1,8 +1,6 @@
 describe('Bloqueio de Login', () => {
 
-  beforeEach(() => {
-    cy.desbloquearUsuario('admin@teste.com')
-  })
+
   it('Deve apresentar uma mensagem de erro ao tentar fazer login três vezes com senha inválida', () => {
 
     //Arrange
@@ -16,6 +14,11 @@ describe('Bloqueio de Login', () => {
     cy.get('.btn').click()
      
     //Assert
+    cy.get('.toast').should('contains.text','Usuário ou senha inválidos, tente novamente')
     cy.get('.toast').should('contains.text','Usuário bloqueado devido a múltiplas tentativas de login inválidas')
+  })
+
+  afterEach(() => {
+    cy.desbloquearUsuario('admin@teste.com')
   })
 })
