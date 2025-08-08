@@ -83,8 +83,8 @@ class ApiService {
         try {
             const response = await fetch(`${API_BASE_URL}/users`);
             if (response.ok) {
-                const users = await response.json();
-                return users.some(user => user.email === email);
+                const data = await response.json();
+                return data.users.some(user => user.email === email);
             }
             return false;
         } catch (error) {
