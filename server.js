@@ -3,9 +3,12 @@ const cors = require('cors');
 const swaggerJsdoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 const authRoutes = require('./routes/auth');
+const userService = require('./data/users');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+userService.resetToDefault();
 
 // Middleware
 app.use(cors());

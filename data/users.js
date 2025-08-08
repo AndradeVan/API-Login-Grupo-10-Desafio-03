@@ -1,7 +1,6 @@
 const bcrypt = require('bcryptjs');
 
-// Dados mockados dos usuários
-let users = [
+const defaultUsers = [
   {
     id: 1,
     email: 'admin@teste.com',
@@ -27,6 +26,12 @@ let users = [
     lastLoginAttempt: null
   }
 ];
+
+let users = JSON.parse(JSON.stringify(defaultUsers));
+
+const resetToDefault = () => {
+  users = JSON.parse(JSON.stringify(defaultUsers));
+};
 
 // Funções para gerenciar usuários
 const loginUsuario = {
@@ -111,7 +116,9 @@ const loginUsuario = {
       return true;
     }
     return false;
-  }
+  },
+
+  resetToDefault: resetToDefault
 };
 
 module.exports = loginUsuario; 

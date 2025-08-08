@@ -1,15 +1,24 @@
-describe('Login', () => {
-  it('Login bloqueado deve apresentar mensagem de erro', () => {
-    
+describe('Bloqueio de Login', () => {
+
+
+  it('Deve apresentar uma mensagem de erro ao tentar fazer login três vezes com senha inválida', () => {
+
     //Arrange
-    cy.visit('http://localhost:8080')
-    
-    //Act
-    cy.get(':nth-child(1) > label').click().type('admin@teste.com')
-     cy.get(':nth-child(2) > label').click().type('senaInvalida')
-     cy.get('.btn').click()
+    cy.visit('/')
+
+    //Act 
+    cy.fixture('login').then((login) => {
+      cy.login(login.invalido.email, login.invalido.password)
+    })
+    cy.get('.btn').click()
+    cy.get('.btn').click()
      
-     //Assert
-    cy.get('.toast').should('be.visible')
+    //Assert
+    cy.get('.toast').should('contains.text','Usuário ou senha inválidos, tente novamente')
+    cy.get('.toast').should('contains.text','Usuário bloqueado devido a múltiplas tentativas de login inválidas')
+  })
+
+  afterEach(() => {
+    cy.desbloquearUsuario('admin@teste.com')
   })
 })
