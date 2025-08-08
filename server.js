@@ -46,7 +46,8 @@ app.get('/', (req, res) => {
     endpoints: {
       login: 'POST /api/auth/login',
       register: 'POST /api/auth/register',
-      forgotPassword: 'POST /api/auth/forgot-password'
+      forgotPassword: 'POST /api/auth/forgot-password',
+      unblock: 'POST /api/auth/unblock'
     }
   });
 });

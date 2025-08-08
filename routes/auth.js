@@ -162,6 +162,15 @@ router.post('/login', (req, res) => {
     // Atualizar tentativas de login
     userService.updateLoginAttempts(email, false);
     
+    // Verificar se o usuário foi bloqueado após esta tentativa
+    const updatedUser = userService.findByEmail(email);
+    if (updatedUser && updatedUser.blocked) {
+      return res.status(423).json({
+        success: false,
+        message: 'Usuário bloqueado devido a múltiplas tentativas de login inválidas'
+      });
+    }
+    
     return res.status(401).json({
       success: false,
       message: 'Usuário ou senha inválidos, tente novamente'
@@ -405,6 +414,90 @@ router.get('/users', (req, res) => {
     success: true,
     users
   });
+});
+
+/**
+ * @swagger
+ * /api/auth/unblock:
+ *   post:
+ *     summary: Desbloquear usuário
+ *     description: Remove o bloqueio de um usuário fornecendo seu email
+ *     tags: [Autenticação]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - email
+ *             properties:
+ *               email:
+ *                 type: string
+ *                 format: email
+ *                 description: Email do usuário a ser desbloqueado
+ *                 example: "admin@teste.com"
+ *     responses:
+ *       200:
+ *         description: Usuário desbloqueado com sucesso
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: true
+ *                 message:
+ *                   type: string
+ *                   example: "Usuário desbloqueado com sucesso"
+ *       400:
+ *         description: Email não fornecido
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
+ *       404:
+ *         description: Usuário não encontrado
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
+ */
+router.post('/unblock', (req, res) => {
+  const { email } = req.body;
+
+  // Validação do campo obrigatório
+  if (!email) {
+    return res.status(400).json({
+      success: false,
+      message: 'Email é obrigatório'
+    });
+  }
+
+  // Verificar se usuário existe
+  const user = userService.findByEmail(email);
+  if (!user) {
+    return res.status(404).json({
+      success: false,
+      message: 'Usuário não encontrado'
+    });
+  }
+
+  // Desbloquear usuário
+  const success = userService.unblockUser(email);
+
+  if (success) {
+    res.json({
+      success: true,
+      message: 'Usuário desbloqueado com sucesso'
+    });
+  } else {
+    res.status(500).json({
+      success: false,
+      message: 'Erro ao desbloquear usuário'
+    });
+  }
 });
 
 module.exports = router; 

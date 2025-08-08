@@ -99,6 +99,18 @@ const loginUsuario = {
       blocked: user.blocked,
       loginAttempts: user.loginAttempts
     }));
+  },
+
+  // Desbloquear usuário por email
+  unblockUser: (email) => {
+    const user = users.find(u => u.email === email);
+    if (user) {
+      user.blocked = false;
+      user.loginAttempts = 0;
+      user.lastLoginAttempt = null;
+      return true;
+    }
+    return false;
   }
 };
 
